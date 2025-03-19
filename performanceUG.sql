@@ -14,8 +14,9 @@ Else 'HIT'
 END AS TARGET
 from sld
 where date(payment_date)='2025-02-07'
-group by branch,date(payment_date)
-order by branch;
+group by branch,date(PAYMENT_DaTe)
+order by branch; -- checking why its not running, troubleshoot
+use recons; -- to enable it use the database called recons.
 
 use recons;
 
@@ -66,3 +67,5 @@ LEFT JOIN leads
 GROUP BY ugdisb_target.branch, ugdisb_target.leads_target
 ORDER BY ROUND((COALESCE(COUNT(leads.primary_mobile), 0) / NULLIF(ugdisb_target.leads_target, 0)) * 100) DESC;
 
+select * from leads;
+select * from new_disb;
