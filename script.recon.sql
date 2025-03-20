@@ -1,20 +1,21 @@
 
--- recon
-select transactionid,paydate,pnumber,cname,xd.amount as statement_amount,branch,transaction_code,sld.amount as superL_amount,
+-- RECON
+SELECT transactionid,paydate,pnumber,cname,xd.amount as statement_amount,branch,transaction_code,sld.amount as superL_amount,
 (xd.amount-sld.amount) AS recon_amount,
 CASE
 WHEN pnumber LIKE '7%' THEN 'Airtel'
 WHEN pnumber LIKE '_______7%' THEN 'MTN'
 ELSE 'FOREIGN_PAYER_NUMBER'
 END AS 'Provider'
-from xd
+from xD
 JOIN sld ON xd.transactionid=sld.transaction_code
-WHERE DATE(PAYDATE) between '2025-01-24' and '2025-01-26';
+WHERE DATE(PAYDATE) between '2025-01-23' and '2025-01-26'; 
+-- PRINTS RECON FOR UG PAYMENTS.
 
 
 select * from xd where transactionid not in (select transaction_code from sld) and
 DATE(PAYDATE) between '2025-01-24' and '2025-01-26';
-
+USE RECONS;
 
 
   -- running disb
