@@ -1,5 +1,6 @@
 
--- RECON
+-- RECONCILING FOR DISCREPANCIES
+
 SELECT transactionid,paydate,pnumber,cname,xd.amount as statement_amount,branch,transaction_code,sld.amount as superL_amount,
 (xd.amount-sld.amount) AS recon_amount,
 CASE
