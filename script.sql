@@ -1,5 +1,5 @@
 use PRODSALE; -- first
-select * from products; -- github editor
+select COUNT(*) from products; -- github editor
 select category, AVG(unit_price) AS AVGunitprice from products --trial
 ORDER BY (AVGunitprice) DESC
 Group by category
