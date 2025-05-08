@@ -8,7 +8,7 @@ This repository contains multiple MySQL projects designed to streamline data ana
 
 * Payment Reconciliation - Identifying and resolving payment discrepancies, including foreign payers and double disbursements.
 * Disbursement Analysis  - Analyzing disbursement patterns to monitor cash flow and financial efficiency.
-* Collections Analysis** - Evaluating collections performance and identifying areas for improvement.
+* Collections Analysis  - Evaluating collections performance and identifying areas for improvement.
 * Leads Collected Analysis - Understanding customer acquisition trends and campaign performance.
 * New Customer Performance  - Tracking the impact of newly onboarded customers on revenue.
 * Double Disbursement Detection - Detecting and highlighting duplicate payments to reduce financial risk.
